@@ -5,6 +5,7 @@ import {
   collection,
   addDoc,
   getDocs,
+  getDoc,
   onSnapshot,
   doc,
   updateDoc,
@@ -14,7 +15,7 @@ const db = getFirestore();
 const petCollection = collection(db, 'pets');
 
 export const getPets = async () => {
-    const querySnapshot = await getDocs(petCollection)
+    const querySnapshot = await getDocs(petCollection);
     const pets = [];
     querySnapshot.forEach((pet) => pets.push({
         id: pet.id,
@@ -36,3 +37,4 @@ export const createPet = async (pets) => {
         adopted: false,
     }) 
 }
+

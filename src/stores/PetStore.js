@@ -12,8 +12,13 @@ export const usePetStore = defineStore('pets', () => {
     return petService.createPet(pets)
   };
 
+  const getPet = (id) => {
+    return pets.value.find((element) => element.id === id)
+  }
+
   return {
     createPet,
     pets,
+    getPet,
   };
 });
