@@ -6,6 +6,7 @@ export const usePetStore = defineStore('pets', () => {
   const pets = ref([]);
 
   petService.onUpdate((data) => pets.value = data);
+  petService.getPets().then((data) => pets.value = data);
 
   const createPet = (pets) => {
     return petService.createPet(pets)

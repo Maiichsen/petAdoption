@@ -13,15 +13,15 @@ import {
 const db = getFirestore();
 const petCollection = collection(db, 'pets');
 
- const getPets = async () => {
+export const getPets = async () => {
     const querySnapshot = await getDocs(petCollection)
-    return querySnapshot.map(doc =>{
-        return {
-            id: doc.id,
-            ...doc.data()
-        }
-    })
-}
+    const pets = [];
+    querySnapshot.forEach((pet) => pets.push({
+        id: pet.id,
+        ...pet.data(),
+    }));
+    return pets;
+};
 
 export const onUpdate = (callback) => {
     onSnapshot(petCollection, async () =>{

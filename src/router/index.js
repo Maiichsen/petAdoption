@@ -1,5 +1,6 @@
 import AddPetView from '@/views/AddPetView.vue'
 import HomeView from '@/views/HomeView.vue'
+import PetDetailView from '@/views/PetDetailView.vue'
 import PetListView from '@/views/PetListView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -20,6 +21,11 @@ const router = createRouter({
       path: '/add',
       name: 'add',
       component: AddPetView
+    },
+    {
+      path: '/pet/:id',
+      name: 'petDetails',
+      component: PetDetailView
     },
   ]
 })
