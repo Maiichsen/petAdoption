@@ -1,5 +1,7 @@
+import AddPetView from '@/views/AddPetView.vue'
+import HomeView from '@/views/HomeView.vue'
+import PetListView from '@/views/PetListView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import IndexView from '../views/IndexView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,9 +9,20 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: IndexView
+      component: HomeView
+    },
+    {
+      path: '/pets',
+      name: 'pets',
+      component: PetListView
+    },
+    {
+      path: '/add',
+      name: 'add',
+      component: AddPetView
     },
   ]
 })
 
 export default router
+
