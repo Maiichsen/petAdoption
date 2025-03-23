@@ -38,6 +38,7 @@ export const createPet = async (pets) => {
     }) 
 };
 
+// mangler den sidste funktion til at vise nnår et dyr er adopteret
 // export const updatePet = async (id, pet) => {
 //     const ref = doc(db, 'pets', id);
 //     await updateDoc(ref, petCollection, pet)
