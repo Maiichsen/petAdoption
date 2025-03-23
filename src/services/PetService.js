@@ -36,5 +36,10 @@ export const createPet = async (pets) => {
         createdAt: new Date(),
         adopted: false,
     }) 
-}
+};
+
+// export const updatePet = async (id, pet) => {
+//     const ref = doc(db, 'pets', id);
+//     await updateDoc(ref, petCollection, pet)
+// }
 
